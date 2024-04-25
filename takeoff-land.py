@@ -1,4 +1,4 @@
-from dronekit import connect, VehicleMode,LocationGlobalRelative
+from dronekit import connect, VehicleMode
 import time
 connection_string="127.0.0.1:14550"
 
@@ -32,6 +32,5 @@ def arm_ol_ve_yuksel(hedef_yukseklik):
 
 arm_ol_ve_yuksel(15)
 
-lokasyon=LocationGlobalRelative(-35.36234863,149.16447480,30)
-
-plane.simple_goto(lokasyon)
+plane.mode = VehicleMode("LAND")
+print("İniş gerçekleşti")
